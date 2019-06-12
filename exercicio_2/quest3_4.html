@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul id = "teste"></ul>
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+        </div>
+
+        <script>
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var uListElement = document.querySelector('ul#teste');
+
+            for (nome of nomes){
+                var listItemElement = document.createElement('li');
+                var textElemente = document.createTextNode(nome);
+
+                listItemElement.appendChild(textElemente);
+
+                uListElement.appendChild(listItemElement);
+
+            }
+
+            function adicionar() {
+                var inputElement = document.querySelector('input[name = nome]');
+                text = inputElement.value
+                var textElement = document.createTextNode(text);
+                var listItemElement = document.createElement('li');
+                listItemElement.appendChild(textElement);
+                uListElement.appendChild(listItemElement);
+
+                inputElement.value = '';
+            }
+
+            
+        </script>
+    </body>
+</html>
